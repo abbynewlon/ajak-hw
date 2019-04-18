@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Homework 6</title>
+  <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <script type="text/javascript">
+
+  //search bar.
+  var searching = $("<input>").attr("type","text");
+  $("body").append(searching);
+  var submitting = $("<button>").attr("type","submit").text("search").attr();
+  $("body").append(submitting);
+
+
+  //geting info from search and putting it into the topics array.
+  $("#").click(function(){
+    topics.push(.value)
+    //remember to clear
+  });
+
+    //dynamocally creates buttons
+    var topics = ["exsample"];
+
+    for (let i = 0; i < topics.length; i++) {
+      var but = $("<button>");
+      but.text(topics[i]);
+      $("body").append(but);
+      
+    }
+
+    //using ajak gets stuff from giphy 
+    var apiKey = "xRAYMypr6lN6kvk8ZLYZ2B1CyiBR1Gg1";
+    //exsample queryUrl from the documentation
+    var queryUrl = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key="+ apiKey +"&limit=5";
+
+    //why curly brackets inside the ()? the whole format is confusing 
+    $.ajax({
+      url: queryUrl,
+      method: "GET",
+    }).then(function(giphyFun){
+      console.log(giphyFun);
+
+    });
+
+
+//what does it mean to switch from http to https. how?
+  </script>
+</body>
+
+<body>
+</body>
